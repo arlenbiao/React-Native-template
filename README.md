@@ -6,7 +6,7 @@
 
 ## 克隆此项目
 ```
-git clone xxxx
+git clone https://github.com/arlenbiao/React-Native-template.git
 ```
 
 ## 进入项目目录后初始化
