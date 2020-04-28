@@ -15,6 +15,6 @@ export default class Index extends Component {
 const style = StyleSheet.create({
     noLoginBtn: {
         marginBottom: 15,
-        backgroundColor: 'red'
+        // backgroundColor: 'red'
     }
 })

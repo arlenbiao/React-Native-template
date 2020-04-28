@@ -1,38 +1,81 @@
-# React Native Project
+# React-axios 
 
-## 前端从入门到放弃：Sunny哥
+## 这是一个React + axios数据请求的模版项目
 
-## 把环境配置好（我这是windows），教程可以搜索一下~
+### 1、首先需要克隆项目
 
-## 克隆此项目
 ```
-git clone https://github.com/arlenbiao/React-Native-template.git
-```
-
-## 进入项目目录后初始化
-```
-npm install 
-
-or
-
-cnpm install
-
-or
-
-yarn install
+git clone https://github.com/arlenbiao/react-axios-template.git
 ```
 
-## 简介
+### 2、首次用脚手架初始化需要上传到git项目
+```
+cd 进入项目目录
 
-- App.js                根节点，挂载组件即可
+git add .
 
-- src                   资源/文件存放
-    
-    - components        组件库
+git commit -m '更新'
 
-    - views             视图组件
+git push
 
 
-## 以上均为简单介绍
+tips:如果不上传到git项目里面会出现不了配置文件
 
-### 后期将会把项目完善，进一步带领小白上手react native 关注我，前端sunny
+```
+### 3、然后执行命令行，暴露配置文件
+```
+npm run eject 
+```
+### 4、打开config里面的【webpackDevServer.config.js】文件
+
+### 5、找到【proxy】代理设置，改成如下
+```
+proxy: {
+    '/api': {
+        target: '这里写你请求的域名即可',
+        changeOrigin: true,
+    }
+}
+
+```
+### 6、如何需要配置多个不同域名的请求
+```
+proxy: {
+    '/apia': {
+        target: '这里写你请求的域名即可',
+        changeOrigin: true,
+    },
+    '/apib': {
+        target: '这里写你请求的域名即可',
+        changeOrigin: true,
+    },
+    '/apic': {
+        target: '这里写你请求的域名即可',
+        changeOrigin: true,
+    }
+}
+```
+### 7、请求的时候
+```
+axios.post("/api/xxxx",{}).then(res=>{
+    console.log(res)
+}).catch(err=>{
+    console.log(err)
+})
+```
+
+### 8、新增sass功能，新增路由功能【react-router-dom】
+```
+npm install --save node-sass css-loader style-loader react-router-dom
+
+tips：npm下载估计会很慢，可以采用cnpm 淘宝镜像
+
+----------------
+npm install -g cnpm --registry=https://registry.npm.taobao.org
+----------------
+
+```
+
+## 关注我，从此踏上踩坑的不归路，踩坑从我开始
+
+# 个人归纳总结，给个星星吧
